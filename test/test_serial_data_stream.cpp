@@ -5,13 +5,13 @@
 
 #include "serial_data_stream.h"
 
-DataStream<int>* data_stream_int;
-DataStream<float>* data_stream_float;
+DataStream::DataStream<int>* data_stream_int;
+DataStream::DataStream<float>* data_stream_float;
 
 void setUp()
 {
-  data_stream_int = new DataStream<int>("test", 10);
-  data_stream_float = new DataStream<float>("test_float", 11);
+  data_stream_int = new DataStream::DataStream<int>("test", 10);
+  data_stream_float = new DataStream::DataStream<float>("test_float", 11);
 }
 
 void tearDown()
@@ -36,13 +36,13 @@ void constructor_tests()
 void assignment_operator_tests()
 {
   // Test assignment operator for int
-  DataStream<int> data_stream_int_2 = *data_stream_int;
+  DataStream::DataStream<int> data_stream_int_2 = *data_stream_int;
   TEST_ASSERT_EQUAL_STRING("test", data_stream_int_2.get_name());
   TEST_ASSERT_EQUAL(10, data_stream_int_2.get_size());
   TEST_ASSERT_EQUAL(0, data_stream_int_2.get_num_data_points());
 
   // Test assignment operator for float
-  DataStream<float> data_stream_float_2 = *data_stream_float;
+  DataStream::DataStream<float> data_stream_float_2 = *data_stream_float;
   TEST_ASSERT_EQUAL_STRING("test_float", data_stream_float_2.get_name());
   TEST_ASSERT_EQUAL(11, data_stream_float_2.get_size());
   TEST_ASSERT_EQUAL(0, data_stream_float_2.get_num_data_points());
@@ -51,13 +51,13 @@ void assignment_operator_tests()
 void copy_constructor_tests()
 {
   // Test copy constructor for int
-  DataStream<int> data_stream_int_2(*data_stream_int);
+  DataStream::DataStream<int> data_stream_int_2(*data_stream_int);
   TEST_ASSERT_EQUAL_STRING("test", data_stream_int_2.get_name());
   TEST_ASSERT_EQUAL(10, data_stream_int_2.get_size());
   TEST_ASSERT_EQUAL(0, data_stream_int_2.get_num_data_points());
 
   // Test copy constructor for float
-  DataStream<float> data_stream_float_2(*data_stream_float);
+  DataStream::DataStream<float> data_stream_float_2(*data_stream_float);
   TEST_ASSERT_EQUAL_STRING("test_float", data_stream_float_2.get_name());
   TEST_ASSERT_EQUAL(11, data_stream_float_2.get_size());
   TEST_ASSERT_EQUAL(0, data_stream_float_2.get_num_data_points());

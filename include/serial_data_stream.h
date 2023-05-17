@@ -6,6 +6,9 @@
 
 #include <Arduino.h>
 
+namespace DataStream
+{
+
 void close(const char* fname)
 {
   Serial.print("_data_stream_:_close_:");
@@ -170,4 +173,5 @@ void DataStream<T>::output_data_stream(const char* postfix)
   Serial.println();
 }
 
+}  // namespace DataStream
 #endif
