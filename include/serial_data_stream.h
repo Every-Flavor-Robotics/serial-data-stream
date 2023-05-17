@@ -108,11 +108,11 @@ int DataStream<T>::get_size()
   return num_data_points;
 }
 
-// Return number of data points in the data stream
+// Return number of data points that have been added to the data stream
 template <typename T>
 int DataStream<T>::get_num_data_points()
 {
-  return num_data_points;
+  return cur_data_point;
 }
 
 // Return pointer to the data
