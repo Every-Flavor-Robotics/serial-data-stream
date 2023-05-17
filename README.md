@@ -65,10 +65,13 @@ To use the serial-data-stream package in your PlatformIO project, follow these s
 Here's an example demonstrating the usage of the serial-data-stream package:
 
 ```cpp
-#include "data_stream.h"
+#include "serial_data_stream.h"
 
 void setup()
 {
+  // Initialize serial connection before using the data stream
+  Serial.begin(115200);
+
   // Create a data stream for logging integer values with a size of 100
   DataStream::DataStream<int> my_data_stream("my_stream", 100);
 
@@ -80,6 +83,7 @@ void setup()
   }
 
   // Output the data stream to serial with a postfix
+  Serial.println("Data full");
   const char* postfix = "postfix";
   my_data_stream.output_data_stream(postfix);
 
