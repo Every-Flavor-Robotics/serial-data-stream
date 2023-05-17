@@ -38,7 +38,7 @@ To use the serial-data-stream package in your PlatformIO project, follow these s
 
    ```cpp
    // Example: Add a new integer data point to the stream
-   int dataPoint = 42;****
+   int dataPoint = 42;
    my_data_stream.add_data_point(dataPoint);
    ```
 
@@ -70,13 +70,13 @@ Here's an example demonstrating the usage of the serial-data-stream package:
 void setup()
 {
   // Create a data stream for logging integer values with a size of 100
-  DataStream<int> my_data_stream("my_stream", 100);
+  DataStream::DataStream<int> my_data_stream("my_stream", 100);
 
   // Add data points to the stream until it is full
-  int dataPoint = 0;
-  while (my_data_stream.add_data_point(dataPoint))
+  int data_point = 0;
+  while (my_data_stream.add_data_point(data_point))
   {
-    dataPoint++;
+    data_point++;
   }
 
   // Output the data stream to serial with a postfix
@@ -84,13 +84,13 @@ void setup()
   my_data_stream.output_data_stream(postfix);
 
   // Close the data logging session
-  const char* fileName = "data_file_name";
-  close(fileName);
+  const char* file_name = "data_file_name";
+  DataStream::close(file_name);
 }
 
 void loop()
 {
-    // do nothing
+  // do nothing
 }
 ```
 
