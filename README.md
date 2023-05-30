@@ -21,10 +21,10 @@ To use the serial-data-stream package in your PlatformIO project, follow these s
        https://github.com/Roam-Studios/serial-data-stream
    ```
 
-2. Include the data_stream.h file in your code:
+2. Include the serial_data_stream.h file in your code:
 
    ```cpp
-   #include "data_stream.h"
+   #include "serial_data_stream.h"
    ```
 
 3. Create an instance of the `DataStream` class with the desired data type and size:

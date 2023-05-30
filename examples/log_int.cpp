@@ -1,6 +1,6 @@
 #include <Arduino.h>
 
-#include "data_stream.h"
+#include "serial_data_stream.h"
 
 void setup()
 {
